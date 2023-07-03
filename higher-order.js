@@ -21,7 +21,7 @@ const mixedNumbers = [6, 3, 1, 7, 5, 2, 6, 8, 9, 4, 2, 7, 9, 3, 1, 8, 4, 3];
 */
 
 //Code Here
-let evenNumbers; // = mixedNumbers.filter(/* Provide Your Callback Here */)
+let evenNumbers = mixedNumbers.filter(num => num % 2 === 0)
 
 ////////// PROBLEM 2 //////////
 
@@ -42,7 +42,9 @@ const prices = [15.0, 23.0, 78.0, 34.0, 12.0, 86.0, 12.0, 79.0, 32.0];
 */
 
 //Code Here
-let postTaxPrices; // = prices.map(/* Provide Your Callback Here );
+let postTaxPrices = prices.map(price => {
+  return price * 1.07
+});
 
 ////////// PROBLEM 3 //////////
 
@@ -59,7 +61,9 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-let totalPopulation; //  = populations.reduce(/* Provide Your Callback Here */)
+let totalPopulation = populations.reduce((acc, curr) => {
+  return acc + curr
+})
 
 ////////// PROBLEM 4 //////////
 
@@ -101,7 +105,9 @@ const monstersInYourPocket = [
 */
 
 //Code Here
-let myStrongest; // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+let myStrongest = monstersInYourPocket.filter((monster) => {
+  return monster.CP > 200;
+})
 
 ////////// PROBLEM 5 //////////
 
@@ -124,7 +130,9 @@ const orders = [
   Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
 */
 
-let orderTotals; // Code here
+let orderTotals = orders.map((order) => {
+  return orderTotal = order.price * (order.tax + 1)
+})
 
 ////////// PROBLEM 6 //////////
 
@@ -157,4 +165,10 @@ const purchases = [
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal; //Code Here
+let bobsTotal = 0;
+
+purchases.forEach((purchase) => {
+  if(purchase.owner === 'Bob'){
+    bobsTotal += purchase.price
+  }
+}) 
