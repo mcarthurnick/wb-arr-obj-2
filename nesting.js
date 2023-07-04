@@ -151,7 +151,11 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+const recordCleaner = () => {
+  myCar['accidents'].forEach((accident) => {
+    accident.atFaultForAccident = false;
+  })
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -172,4 +176,15 @@ var numsArr = [
     4. Return the modified numsArr.
 */
 
-//Code Here
+const looper = () => {
+  for(let i = 0; i < numsArr.length; i++){
+    for(let j = 0; j < numsArr[i].length; j++){
+        if(numsArr[i][j] % 2 === 0){
+          numsArr[i][j] = 'even'
+        } else {
+          numsArr[i][j] = 'odd'
+        }
+    }
+  }
+  return numsArr
+}
